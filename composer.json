@@ -20,7 +20,7 @@
 		"wiki" : "https://github.com/GollumSF/serializer-describe-annotation-bundle/blob/master/README.md"
 	},
 	"require" : {
-		"php" : ">=7.2",
+		"php" : ">=7.1",
 		"symfony/framework-bundle" : ">=4",
 		"symfony/serializer-pack": "*"
 	},
