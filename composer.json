@@ -1,0 +1,33 @@
+{
+	"name" : "gollumsf/serializer-describe-annotation-bundle",
+	"type" : "symfony-bundle",
+	"description" : "Add class annotaion for describe serializer property",
+	"keywords" : [
+		"Serialize",
+		"Class",
+		"Annotation",
+		"Symfony"
+	],
+	"homepage" : "https://github.com/GollumSF/serializer-describe-annotation-bundle",
+	"license" : "GPL-3.0-or-later",
+	"authors" : [{
+			"name" : "Damien Duboeuf",
+			"email" : "smeagolworms4@gmail.com"
+		}
+	],
+	"support" : {
+		"email" : "smeagolworms4@gmail.com",
+		"wiki" : "https://github.com/GollumSF/serializer-describe-annotation-bundle/blob/master/README.md"
+	},
+	"require" : {
+		"php" : ">=7.2",
+		"symfony/framework-bundle" : ">=4",
+		"symfony/serializer-pack": "*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"GollumSF\\SerializerDescribeAnnotationBundle" : ""
+		}
+	},
+	"target-dir" : "GollumSF/SerializerDescribeAnnotationBundle"
+}
