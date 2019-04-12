@@ -5,6 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/gollumsf/serializer-describe-annotation-bundle/v/stable?)](https://packagist.org/packages/gollumsf/serializer-describe-annotation-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/gollumsf/serializer-describe-annotation-bundle/v/unstable?)](https://packagist.org/packages/gollumsf/serializer-describe-annotation-bundle)
 
+Add class annotation for describe serializer property
 
 ## Installation:
 
@@ -12,7 +13,7 @@
 composer require gollumsf/serializer-describe-annotation-bundle
 ```
 
-
+### config/bundles.php
 ```php
 return [
     // [ ... ]
