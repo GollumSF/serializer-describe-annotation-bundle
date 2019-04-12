@@ -34,7 +34,7 @@ class EntityParent {
  * @SerializerDescribe({
  * 	"proprtyA" = {
  *		"groups" = {
- * 			"chatMessage_get", "chatMessage_getc"
+ * 			"group_1", "group_2"
  * 		}
  *	},
  * 	"proprtyB" = {
