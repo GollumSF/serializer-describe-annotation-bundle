@@ -43,7 +43,7 @@ class EntityParent {
  *	}
  * })
  */
-class EntityChild extend EntityParent {
+class EntityChild extends EntityParent {
     private $proprtyB;
 }
 ```
