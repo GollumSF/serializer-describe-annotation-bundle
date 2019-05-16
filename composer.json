@@ -25,7 +25,7 @@
 		"symfony/serializer-pack": "*"
 	},
 	"autoload" : {
-		"psr-0" : {
+		"psr-4" : {
 			"GollumSF\\SerializerDescribeAnnotationBundle" : ""
 		}
 	},
