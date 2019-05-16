@@ -1,7 +1,7 @@
 {
 	"name" : "gollumsf/serializer-describe-annotation-bundle",
 	"type" : "symfony-bundle",
-	"description" : "Add class annotaion for describe serializer property",
+	"description" : "Add class annotation for describe serializer property",
 	"keywords" : [
 		"Serialize",
 		"Class",
