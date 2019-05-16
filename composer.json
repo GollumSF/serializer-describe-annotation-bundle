@@ -28,6 +28,5 @@
 		"psr-4" : {
 			"GollumSF\\SerializerDescribeAnnotationBundle\\" : "."
 		}
-	},
-	"target-dir" : "GollumSF/SerializerDescribeAnnotationBundle"
+	}
 }
