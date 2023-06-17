@@ -2,46 +2,11 @@
 
 namespace Test\GollumSF\SerializerDescribeAnnotationBundle\Unit\Mapping\Loader;
 
-use Doctrine\Common\Annotations\Reader;
-use GollumSF\SerializerDescribeAnnotationBundle\Attribute\SerializerDescribe;
-use GollumSF\SerializerDescribeAnnotationBundle\Mapping\Loader\AnnotationClassLoader;
 use GollumSF\SerializerDescribeAnnotationBundle\Mapping\Loader\AttributeClassLoader;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Exception\MappingException;
 use Symfony\Component\Serializer\Mapping\AttributeMetadata;
 use Symfony\Component\Serializer\Mapping\ClassMetadataInterface;
-
-#[SerializerDescribe([
-	'property2' => [
-		'groups' => [ 'GROUP2' ],
-	],
-	'getProperty3' => [
-		'groups' => [ 'GROUP3' ],
-		'serializedName' => 'SERIALIZED_NAME',
-		'maxDepth' => 5
-	]
-])]
-class AttributeModel {
-	public $property1 = 'property1';
-	public $property2 = 'property2';
-
-	public function getProperty3() {
-		return 'property3';
-	}
-}
-#[SerializerDescribe([
-	'error' => [
-		'groups' => [ 'ERROR' ],
-	],
-])]
-class AttributeModelError {
-	public $property1 = 'property1';
-	public $property2 = 'property2';
-
-	public function getProperty3() {
-		return 'property3';
-	}
-}
 
 /**
  * @requires PHP 8.0.0
