@@ -1,0 +1,23 @@
+name: Symfony 4.4
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  create:
+    tags:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ./.github/actions/test
+      with:
+        symfony_version: '4.4'
+        php_version: '7.2'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}

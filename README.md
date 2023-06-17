@@ -24,26 +24,49 @@ return [
 ## Usage
 
 ```php
-use GollumSF\SerializerDescribeAnnotationBundle\Annotation\SerializerDescribe;
+use GollumSF\SerializerDescribeAnnotationBundle\Attribute\SerializerDescribe;
 
 class EntityParent {   
     private $proprtyA;
 }
 
+[#SerializerDescribe([
+	'propertyA' => [
+	    'groups' => [
+ 			'group_1', 'group_2'
+ 		]
+	],
+    'propertyB' => [
+ 		'serializedName' => 'new_name',
+ 		'maxDepth' => 2
+ 	]
+])]
+class EntityChild extends EntityParent {
+    private $propretyB;
+}
+```
+
+```php
+use GollumSF\SerializerDescribeAnnotationBundle\Annotation\SerializerDescribe;
+
+class EntityParent {   
+    private $propertyA;
+}
+
 /**
  * @SerializerDescribe({
- * 	"proprtyA" = {
+ * 	"propertyA" = {
  *		"groups" = {
  * 			"group_1", "group_2"
  * 		}
  *	},
- * 	"proprtyB" = {
+ * 	"propertyB" = {
  *		"serializedName" = "new_name",
  *		"maxDepth" = 2
  *	}
  * })
  */
 class EntityChild extends EntityParent {
-    private $proprtyB;
+    private $propertyB;
 }
 ```

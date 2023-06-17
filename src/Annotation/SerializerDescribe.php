@@ -11,7 +11,7 @@ class SerializerDescribe {
 	/** @var array */
 	private $properties = [];
 	
-	public function __construct ($param) {
+	public function __construct (array $param) {
 		$this->properties = isset($param['value']) ? $param['value'] : [];
 	}
 	

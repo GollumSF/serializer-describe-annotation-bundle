@@ -20,13 +20,24 @@
 		"wiki" : "https://github.com/GollumSF/serializer-describe-annotation-bundle/blob/master/README.md"
 	},
 	"require" : {
-		"php" : ">=7.1",
-		"symfony/framework-bundle" : ">=4",
-		"symfony/serializer-pack": "*"
+        "php": ">=7.2",
+		"symfony/framework-bundle": "^4.4|^5|^6",
+		"symfony/serializer-pack": "*",
+		"doctrine/annotations": "*"
 	},
-	"autoload" : {
-		"psr-4" : {
-			"GollumSF\\SerializerDescribeAnnotationBundle\\" : "."
-		}
-	}
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "nyholm/symfony-bundle-test": "1.8.1",
+		"gollumsf/reflection-property-test": "^1.0"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "GollumSF\\SerializerDescribeAnnotationBundle\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\GollumSF\\SerializerDescribeAnnotationBundle\\" : "tests/"
+        }
+    }
 }
