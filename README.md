@@ -32,16 +32,16 @@ return [
 use GollumSF\SerializerDescribeAnnotationBundle\Attribute\SerializerDescribe;
 
 class EntityParent {   
-    private $proprtyA;
+	private $proprtyA;
 }
 
-[#SerializerDescribe([
+#[SerializerDescribe([
 	'propertyA' => [
-	    'groups' => [
+		'groups' => [
  			'group_1', 'group_2'
  		]
 	],
-    'propertyB' => [
+	'propertyB' => [
  		'serializedName' => 'new_name',
  		'maxDepth' => 2
  	]
@@ -55,7 +55,7 @@ class EntityChild extends EntityParent {
 use GollumSF\SerializerDescribeAnnotationBundle\Annotation\SerializerDescribe;
 
 class EntityParent {   
-    private $propertyA;
+	private $propertyA;
 }
 
 /**
@@ -72,6 +72,6 @@ class EntityParent {
  * })
  */
 class EntityChild extends EntityParent {
-    private $propertyB;
+	private $propertyB;
 }
 ```
