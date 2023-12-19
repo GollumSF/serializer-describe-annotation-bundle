@@ -1,8 +1,7 @@
 # GollumSFSerializerDescribeAnnotationBundle
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_4.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_5.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
-[![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_6.0.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
-[![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_6.3.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
+[![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_6.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 
 [![Coverage](https://coveralls.io/repos/github/GollumSF/serializer-describe-annotation-bundle/badge.svg?branch=master)](https://coveralls.io/github/GollumSF/serializer-describe-annotation-bundle)
 [![License](https://poser.pugx.org/gollumsf/serializer-describe-annotation-bundle/license?)](https://packagist.org/packages/gollumsf/serializer-describe-annotation-bundle)
