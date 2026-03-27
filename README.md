@@ -1,4 +1,7 @@
 # GollumSFSerializerDescribeAnnotationBundle
+
+> **DEPRECATED** - This bundle is deprecated. Use [gollumsf/serializer-describe-attribute-bundle](https://github.com/GollumSF/serializer-describe-attribute-bundle) instead, which supports PHP 8.2+ and Symfony 6.4 / 7.x / 8.0.
+
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_4.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_5.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_6.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
@@ -11,66 +14,22 @@
 
 Add class annotation for describe serializer property
 
-## Installation:
+## Migration
 
-```shell
-composer require gollumsf/serializer-describe-annotation-bundle
+Replace in your `composer.json`:
+```diff
+- "gollumsf/serializer-describe-annotation-bundle": "^x.x"
++ "gollumsf/serializer-describe-attribute-bundle": "^1.0"
 ```
 
-### config/bundles.php
-```php
-return [
-    // [ ... ]
-    GollumSF\SerializerDescribeAnnotationBundle\GollumSFSerializerDescribeAnnotationBundle::class => ['all' => true],
-];
+Replace in your code:
+```diff
+- use GollumSF\SerializerDescribeAnnotationBundle\Attribute\SerializerDescribe;
++ use GollumSF\SerializerDescribeAttributeBundle\Attribute\SerializerDescribe;
 ```
 
-## Usage
-
-```php
-use GollumSF\SerializerDescribeAnnotationBundle\Attribute\SerializerDescribe;
-
-class EntityParent {   
-	private $proprtyA;
-}
-
-#[SerializerDescribe([
-	'propertyA' => [
-		'groups' => [
- 			'group_1', 'group_2'
- 		]
-	],
-	'propertyB' => [
- 		'serializedName' => 'new_name',
- 		'maxDepth' => 2
- 	]
-])]
-class EntityChild extends EntityParent {
-    private $propretyB;
-}
-```
-
-```php
-use GollumSF\SerializerDescribeAnnotationBundle\Annotation\SerializerDescribe;
-
-class EntityParent {   
-	private $propertyA;
-}
-
-/**
- * @SerializerDescribe({
- * 	"propertyA" = {
- *		"groups" = {
- * 			"group_1", "group_2"
- * 		}
- *	},
- * 	"propertyB" = {
- *		"serializedName" = "new_name",
- *		"maxDepth" = 2
- *	}
- * })
- */
-class EntityChild extends EntityParent {
-	private $propertyB;
-}
+Replace in `config/bundles.php`:
+```diff
+- GollumSF\SerializerDescribeAnnotationBundle\GollumSFSerializerDescribeAnnotationBundle::class => ['all' => true],
++ GollumSF\SerializerDescribeAttributeBundle\GollumSFSerializerDescribeAttributeBundle::class => ['all' => true],
 ```
