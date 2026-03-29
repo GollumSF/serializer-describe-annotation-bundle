@@ -59,13 +59,13 @@ class AnnotationClassLoaderTest extends TestCase
 			->method('addAttributeMetadata')
 			->willReturnCallback(function (AttributeMetadata $metadata) use (&$metadatas) {
 				if (count($metadatas) === 0) {
-					$this->assertEquals('property1', $metadata->name);
+					$this->assertEquals('property1', $metadata->getName());
 				}
 				if (count($metadatas) === 1) {
-					$this->assertEquals('property2', $metadata->name);
+					$this->assertEquals('property2', $metadata->getName());
 				}
 				if (count($metadatas) === 2) {
-					$this->assertEquals('property3', $metadata->name);
+					$this->assertEquals('property3', $metadata->getName());
 				}
 				$metadatas[] = $metadata;
 			})
@@ -83,17 +83,17 @@ class AnnotationClassLoaderTest extends TestCase
 			$annotationClassLoader->loadClassMetadata($classMetadata)
 		);
 
-		$this->assertEquals([], $metadatas[0]->groups);
-		$this->assertEquals(null, $metadatas[0]->serializedName);
-		$this->assertEquals(null, $metadatas[0]->maxDepth);
+		$this->assertEquals([], $metadatas[0]->getGroups());
+		$this->assertEquals(null, $metadatas[0]->getSerializedName());
+		$this->assertEquals(null, $metadatas[0]->getMaxDepth());
 
-		$this->assertEquals([ 'GROUP2' ], $metadatas[1]->groups);
-		$this->assertEquals(null, $metadatas[1]->serializedName);
-		$this->assertEquals(null, $metadatas[1]->maxDepth);
+		$this->assertEquals([ 'GROUP2' ], $metadatas[1]->getGroups());
+		$this->assertEquals(null, $metadatas[1]->getSerializedName());
+		$this->assertEquals(null, $metadatas[1]->getMaxDepth());
 
-		$this->assertEquals([ 'GROUP3' ], $metadatas[2]->groups);
-		$this->assertEquals('SERIALIZED_NAME', $metadatas[2]->serializedName);
-		$this->assertEquals(5, $metadatas[2]->maxDepth);
+		$this->assertEquals([ 'GROUP3' ], $metadatas[2]->getGroups());
+		$this->assertEquals('SERIALIZED_NAME', $metadatas[2]->getSerializedName());
+		$this->assertEquals(5, $metadatas[2]->getMaxDepth());
 	}
 
 	public function testLoadClassMetadataException() {
@@ -128,10 +128,10 @@ class AnnotationClassLoaderTest extends TestCase
 			->method('addAttributeMetadata')
 			->willReturnCallback(function (AttributeMetadata $metadata) use (&$metadatas) {
 				if (count($metadatas) === 0) {
-					$this->assertEquals('property1', $metadata->name);
+					$this->assertEquals('property1', $metadata->getName());
 				}
 				if (count($metadatas) === 1) {
-					$this->assertEquals('property2', $metadata->name);
+					$this->assertEquals('property2', $metadata->getName());
 				}
 				$metadatas[] = $metadata;
 			})

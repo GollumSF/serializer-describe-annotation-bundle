@@ -15,7 +15,7 @@ inputs:
     required: true
     default: ''
   github_token:
-    description: 'Token for deploy corverage'
+    description: 'Token for deploy coverage'
     required: true
   discord_webhook:
     description: 'Discord webhook'
@@ -27,31 +27,28 @@ runs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version:  ${{ inputs.php_version }}.
+        php-version: ${{ inputs.php_version }}
+        coverage: xdebug
 
     - name: Update composer
       shell: bash
       run: composer self-update
 
-    - name: Validate composer.json and composer.lock
+    - name: Validate composer.json
       shell: bash
-      run: composer validate --strict
+      run: composer validate
 
-    - name: Intsall Symfony
+    - name: Install dependencies
       shell: bash
       run: |
-        if [ "${{ inputs.symfony_version }}" != "" ]; then composer require "symfony/symfony:${{ inputs.symfony_version }}" --no-update; fi;
-        if [[ "$(echo "${{ inputs.symfony_version }} >= 5.4" | bc -l)" -eq 1 ]]; then composer require "doctrine/annotations:^1" --no-update; fi; # Fix dependencie on  SF 5.4
-        if [[ "$(echo "${{ inputs.symfony_version }} >= 6.1" | bc -l)" -eq 1 ]]; then composer require "monolog/monolog" "masterminds/html5" --no-update; fi; # Fix dependencie on  SF 6.1
-        if [[ "$(echo "${{ inputs.symfony_version }} >= 6.4" | bc -l)" -eq 1 ]]; then composer require "symfony/translation:^6.4" --no-update; fi; # Fix dependencie on  SF 6.4
-        if [ "${{ inputs.php_version }}" == "7.2" ]; then composer require --dev "phpunit/phpunit:8.5" --no-update; fi;
-        composer update --prefer-dist --no-interaction $composer_flags
+        if [ "${{ inputs.symfony_version }}" != "" ]; then composer require "symfony/framework-bundle:${{ inputs.symfony_version }}.*" --no-update; fi;
+        composer update --prefer-dist --no-interaction --no-audit ${{ inputs.composer_flags }}
 
     - name: Run tests
       shell: bash
       run: |
         mkdir -p build/logs
-        php -d memory_limit=-1 vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml --whitelist src tests/
+        XDEBUG_MODE=coverage php -d memory_limit=-1 vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml
 
     - name: Upload coverage results to Coveralls
       if: success()
