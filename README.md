@@ -2,7 +2,6 @@
 
 > **DEPRECATED** - This bundle is deprecated. Use [gollumsf/serializer-describe-attribute-bundle](https://github.com/GollumSF/serializer-describe-attribute-bundle) instead, which supports PHP 8.2+ and Symfony 6.4 / 7.x / 8.0.
 
-[![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_4.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_5.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 [![Build Status](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions/workflows/symfony_6.4.yml/badge.svg?branch=master)](https://github.com/GollumSF/serializer-describe-annotation-bundle/actions)
 
